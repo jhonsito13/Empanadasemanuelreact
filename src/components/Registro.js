@@ -11,7 +11,7 @@ function Register() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleRegister = (e) => {
+  const handleRegister = async  (e) => {
     e.preventDefault();
 
     // Validar que las contraseñas coincidan
@@ -36,7 +36,28 @@ function Register() {
 
     // Guardar los datos de usuario en el localStorage
     const newUser = { email, username, password };
-    localStorage.setItem('user', JSON.stringify(newUser));
+     try {
+      const response = await fetch('http://127.0.0.1:8000/usuarios', {
+        method: 'POST',
+      mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newUser),
+      });
+
+      console.log(JSON.stringify(newUser));
+
+      if (!response.ok) {
+        throw new Error('Error al registrar el usuario');
+      }
+
+      // Limpiar los errores y redirigir al login después de registrarse
+      setError('');
+      navigate('/login');
+    } catch (err) {
+      setError('Hubo un problema con el registro: ' + err.message);
+    }
 
     // Redirigir al login después de registrarse
     setError(''); // Limpiar error antes de redirigir
@@ -56,7 +77,7 @@ function Register() {
             <p className="card-text">Ingresa tus datos para crear una cuenta.</p>
 
             {/* Formulario de registro */}
-            <form onSubmit={handleRegister}>
+            <form onSubmit={handleRegister}  method="POST">
               <input
                 type="email"
                 className="form-control"

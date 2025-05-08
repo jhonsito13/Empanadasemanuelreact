@@ -1,159 +1,83 @@
-/* Estilos generales para toda la aplicación */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* App.css */
 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100%;
-  font-family: 'Arial', sans-serif;
-  background-color: #ffffff;
-  color: #000000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('/public/img/empanadas_Login.avif');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.8;
-}
-
-/* Estilo para el título principal */
-h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #000000;
-}
-
-/* Estilos para el contenedor de la página principal */
-.fondo-imagen {
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-/* Estilos para los formularios de Login y Registro */
-.login-container, .register-container {
+/* Contenedor principal para centrar el contenido */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/public/img/Home/empanadas_Login.avif');
+     background-repeat: no-repeat;
+     background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 20px;
+  }
+.cards {
+    background-color: rgba(82, 79, 79, 0.274);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 400px;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(253, 230, 115, 0.1);
-  text-align: center;
-}
-
-.login-container input, .register-container input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.btn {
-  width: 100%;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-/* Botón principal (amarillo) */
-.btn-primary {
-  background-color: #ff8c00; /* Color amarillo */
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #e67e00; /* Un tono más oscuro para hover */
-}
-
-/* Botón secundario (gris) */
-.btn-secondary {
-  background-color: #6c757d; /* Gris oscuro */
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #5a6268; /* Tono más oscuro para hover */
-}
-/* Estilos de los enlaces */
-.mt-2 {
-  margin-top: 10px;
-}
-
-.mt-3 {
-  margin-top: 20px;
-}
-
-/* Para los mensajes de error */
-.text-danger {
-  color: red;
-  font-size: 0.9rem;
-}
-
-/* Estilos para el contenedor de la pantalla de inicio (Home) */
-.welcome-container {
+  margin: 20px;
+  /*columna botones*/
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-/* Estilos específicos para la pantalla de inicio */
-.welcome-container h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20px;
-}
+  
+  /* Estilo para el título */
+  h2.titulo{
+    font-size: 2rem;
+    color: #ffffff; /* Color oscuro para el título */
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para el párrafo */
+  p {
+    font-size: 1.2rem;
+    color: #ffffff; /* Color de texto más suave */
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos para los botones */
+ 
+  button{
+    width: 200px;
+    padding: 5px 5px;
+    border: none;
 
-.welcome-container p {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 30px;
-}
 
-.welcome-container button {
-  margin-bottom: 10px;
-}
-
-/* Fondo bonito para el formulario y los botones */
-.container {
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.container h2 {
-  font-size: 2.5rem;
-  color: #fff;
-  margin-bottom: 1rem;
-}
-
-/* Estilo para el logo de la aplicación */
-.logo {
-  border-radius: 5px;
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-  object-fit: cover;
-}
+  }
+  /* Botón primario */
+  .boton_inicio {
+    background-color: #834e00;
+    margin:5px auto;
+    border-radius: 10px;  
+    color: white;
+  
+    
+  }
+  
+  /* Botón secundario */
+  .boton_registro{
+    background-color: #834e00;
+    margin:  5px auto;
+    border-radius: 10px;  /* Verde */
+    color: white;
+  }
+  
+  /* Efecto al pasar el mouse sobre los botones */
+  button:hover {
+    opacity: 0.8; /* Efecto de transparencia al pasar el ratón */
+  }
+  .logoEM {
+    width: 130px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    margin-bottom: 20px;
+    border-radius: 10px; /* opcional: si quieres que tenga esquinas redondeadas */
+  }
+  

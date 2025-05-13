@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../styles/Login.css';
+import { NavItem } from 'react-bootstrap';
 
 const Login = () => {
+  const navigate = useNavigate(); 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -10,6 +13,7 @@ const Login = () => {
     e.preventDefault();
     console.log('Correo:', email);
     console.log('Contraseña:', password);
+    navigate('/Start');
     // Aquí iría la lógica de autenticación
   };
 
@@ -23,7 +27,7 @@ const Login = () => {
             <label htmlFor="email">Correo Electrónico</label>
             <input
               autoFocus
-              pattern='[a-za-z0-9\s]'
+              autoComplete='email'
               type="email"
               id="email"
               placeholder="Ingresa tu correo"

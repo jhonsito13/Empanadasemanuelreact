@@ -40,7 +40,7 @@ const ForgotPassword = () => {
           </p>
         )}
         <div className="forgot-password">
-          <Link to="/" className="link-button">Volver al inicio de sesión</Link>
+          <Link to="/Login" className="link-button">Volver al inicio de sesión</Link>
         </div>
       </div>
     </div>

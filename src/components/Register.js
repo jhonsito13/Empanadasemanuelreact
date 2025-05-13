@@ -19,13 +19,17 @@ const LoginForm = () => {
       [name]: value
     });
   };
+const navigate = useNavigate();
 
-  // Manejo del envío del formulario
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aquí puedes hacer algo con los datos, como enviarlos a un backend
-    console.log(formData);
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+  console.log(formData);
+  // Aquí iría la lógica de envío al backend
+
+  // Redirige al login después del registro
+  navigate('/login');
+};
+  
 
   return (
     <div className='body'>

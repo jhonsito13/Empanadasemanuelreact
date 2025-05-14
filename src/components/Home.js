@@ -4,7 +4,7 @@ import '../styles/App.css'; // Asegúrate de que App.css esté correctamente imp
 
 function Home() {
   const navigate = useNavigate();
-
+//comentarios
   // Función para redirigir a Login
   const goToLogin = () => {
     navigate('/login');
